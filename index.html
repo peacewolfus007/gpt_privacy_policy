@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muş Mutlu Sokak Patileri Derneği</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+
+
+.service-card {
+            transition: transform 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .service-card .card-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        
+        .service-card .btn {
+            margin-top: auto;
+        }
+
+        :root {
+            --primary-color: #1877f2;
+            --secondary-color: #e4f0fd;
+            --accent-color: #0d6efd;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e4f0fd 0%, #ffffff 100%);
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img {
+            max-height: 60px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(24, 119, 242, 0.7), rgba(24, 119, 242, 0.7)), url('/api/placeholder/1920/600');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .service-card {
+            transition: transform 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        .social-links a {
+            color: var(--primary-color);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+.btn-primary {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+    padding: 1rem 2.5rem;  /* Butonu büyütmek için padding artırıldı */
+    font-size: 1.25rem;    /* Yazı boyutunu büyüttük */
+    transition: all 0.3s ease;  /* Yumuşak geçiş efekti */
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+}
+
+
+/* Container için */
+.container {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Navbar için */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.7) !important; /* Saydamlık eklendi */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hero section container'ı için */
+.hero-section .container {
+    background-color: transparent;
+    backdrop-filter: none;
+}
+
+/* Footer container'ı için */
+.footer .container {
+    background-color: transparent;
+    backdrop-filter: none;
+}
+        .news-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bağış Modal -->
+    <div class="modal fade" id="bagisModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bağış Bilgileri</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Mama desteğiniz için: <a href="http://www.mamakumbarasi.com/mus-sokak-canlari" target="_blank">www.mamakumbarasi.com/mus-sokak-canlari</a> adresinden bağışta bulunabilirsiniz.</p>
+                    <p>Dernek ibanı almak için lütfen aşağıdaki sosyal medya hesaplarından bize ulaşın. Böylece yaptığımız harcamalarla ilgili olarak sizi bire bir bilgilendirmemiz de mümkün olur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"> 
+                <img src="dernek.JPG" alt="Dernek Logo" class="img-fluid">Muş Mutlu Sokak Patileri Derneği
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hakkimizda">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hizmetlerimiz">Hizmetlerimiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#duyurular">Duyurular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#basari-hikayeleri">Başarı Hikayeleri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#iletisim">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4">Muş Mutlu Sokak Patileri Derneği</h1>
+            <p class="lead">Sokak hayvanlarının sesi, umudu ve koruyucusuyuz.</p>
+            <a href="#" class="btn btn-lg btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bagisModal">Bağış Yap</a>
+        </div>
+    </section>
+
+    <!-- Duyurular -->
+    <section id="duyurular" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Duyurular ve Haberler</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <div class="card-body">
+                            <p class="news-date">19 Ocak 2024</p>
+                            <h5 class="card-title">Bize destek olun</h5>
+                            <p class="card-text">Sadece para ve mama yardımı değil, sosyal medya hesaplarımızı takip ederek, paylşarak ve beğen vererek de bize destek olabilirsiniz.  </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <div class="card-body">
+                            <p class="news-date">18 Ocak 2024</p>
+                            <h5 class="card-title">Sosyal Medya Hesaplarımız</h5>
+                            <p class="card-text">Maalesef 1600 takipçili instagram hesabımız saldırıya uğradığı için kapandı.Sayfanın en altındaki linkten yeniden takipçimiz olabilirsiniz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <div class="card-body">
+                            <p class="news-date">10 Ocak 2024</p>
+                            <h5 class="card-title">Yeni Beslenme Noktaları</h5>
+                            <p class="card-text">Şehrimizde yeni oluşturduğumuz beslenme noktaları ve mama odakları.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hizmetlerimiz -->
+    <section id="hizmetlerimiz" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Hizmetlerimiz</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-heartbeat service-icon mb-3"></i>
+                            <h5 class="card-title">Hastalıklar ve Yaralanmalar</h5>
+                            <p class="card-text">Sokak hayvanlarına tıbbi müdahale ve tedavi hizmetleri sağlıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-syringe service-icon mb-3"></i>
+                            <h5 class="card-title">Aşılama</h5>
+                            <p class="card-text">Düzenli aşılama programları ile hastalıklardan koruyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-ambulance service-icon mb-3"></i>
+                            <h5 class="card-title">Hayvan Nakli</h5>
+                            <p class="card-text">Acil durumlarda güvenli nakil hizmeti sağlıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-first-aid service-icon mb-3"></i>
+                            <h5 class="card-title">Çok Acil Vakalar</h5>
+                            <p class="card-text">7/24 acil müdahale ekibimiz ile hızlı çözümler sunuyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bowl-food service-icon mb-3"></i>
+                            <h5 class="card-title">Mama Desteği</h5>
+                            <p class="card-text">Düzenli beslenme noktaları ve mama desteği sağlıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Başarı Hikayeleri -->
+    <section id="basari-hikayeleri" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Başarı Hikayeleri</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <img src="findik2.jpeg" class="card-img-top" alt="Fındık Kedinin Hikayesi">
+                        <div class="card-body">
+                            <h5 class="card-title">Fındık Kedinin Hikayesi</h5>
+                            <p class="card-text">Fındık kedimizin hikayesi, bir araba kaputunda başladı. Aldığımız ihbarda, zavallı dostumuzun bir bacağının kırık olduğu bildirilmişti. İlk müdahale için götürüldüğü veterinerde yaşanan talihsiz bir tedavi süreci sonrasında, bir ayağının ampüte edilmesi kaçınılmaz hale geldi..</p>
+                            <a href="findik.html" class="btn btn-primary">Hikayeyi Oku</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <img src="sansli4.jpeg" class="card-img-top" alt="Karamelın Hikayesi">
+                        <div class="card-body">
+                            <h5 class="card-title">Şanslı Köpeğin Hikayesi</h5>
+                            <p class="card-text"> Şanslı köpeğimizin hikayesi, bir yol kenarında başladı. Bir arabanın çarpıp öylece bırakıp gittiği canımız, yol kenarında ölüme yatmış haldeydi ki yolumuz kesişti. İlk müdahalesini hemen Muş'ta gerçekleştirdik, ancak durumu daha kapsamlı bir tedavi gerektiriyordu.</p>
+                            <a href="sansli.html" class="btn btn-primary">Hikayeyi Oku</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card h-100">
+                        <img src="pasa2.jpeg" class="card-img-top" alt="Paşa Kedinin Hikayesi">
+                        <div class="card-body">
+                            <h5 class="card-title">Paşa Kedinin Hikayesi</h5>
+                                                <p class="lead text-center quote">
+                        "Sevgi ve kararlılıkla aşılamayacak zorluk yoktur..."
+                    </p>
+                            <p class="card-text">Paşa kedimiz beyninde sıvı birikimi sonucu sokakta dengesini kaybeder vaziyette bulunduğunda, durumunun ciddiyetinin farkındaydık. İhbar gelir gelmez harekete geçtik. Ameliyatının çok pahalı olması ve farklı bir şehirde yapılacak olması bizi durduramadı.</p>
+                            <a href="pasa.html" class="btn btn-primary">Hikayeyi Oku</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- İletişim -->
+    <section id="iletisim" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Bize Ulaşın</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="contact-card text-center">
+                        <h4 class="mb-4">İletişim Bilgilerimiz</h4>
+                        <p class="mb-4">
+                            <i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:musmutlusokakpatileridernegi@gmail.com" class="text-decoration-none">
+                                musmutlusokakpatileridernegi@gmail.com
+                            </a>
+                        </p>
+                        <h4 class="mb-4">Sosyal Medya</h4>
+                        <div class="social-links">
+                            <a href="https://www.tiktok.com/@mussokakpatileridernegi" target="_blank"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.youtube.com/@sakirekaradas5746" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/mus_mutlu_sokak_patileri" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Muş Mutlu Sokak Patileri Derneği. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
